@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordian</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+    h1{
+        text-align: center;
+    }
+    ul {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+    }
+    ul li a.toggle {
+        background-color: black;
+        color: white;
+        width: 50%;
+        display: block;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    .inner-text {
+        display: none;
+    }
+    .show {
+        display: block;
+    }
+</style>
+<body>
+    <h1>Simple Accordian</h1>
+    <ul>
+        <li>
+            <a class="toggle" href="#" >Heading one</a>
+            <p class="inner-text">This is fist paragraph</p>
+        </li>
+        <li>
+            <a class="toggle" href="#" >Heading two</a>
+            <p class="inner-text">This is second paragraph</p>
+        </li>
+    </ul>
+
+    <script>
+        $('.toggle').click(function(e){
+            if($(this).next().hasClass('show')) {
+                $(this).next().slideUp("slow").removeClass('show');
+            } else {
+                $(this).next().slideDown("slow").addClass('show');
+            }
+        });
+    </script>
+</body>
+</html>
